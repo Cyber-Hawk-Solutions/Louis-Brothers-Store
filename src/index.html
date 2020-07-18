@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>LouisBrothersStore</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400i,700%7CMontserrat:300,400,500,600,700%7CMerriweather:300,400,300i,400i" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="assets/css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="assets/style.css" type="text/css" />
+	<link rel="stylesheet" href="assets/css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="assets/css/swiper.css" type="text/css" />
+
+	<!-- shop Demo Specific Stylesheet -->
+	<link rel="stylesheet" href="assets/shop.css" type="text/css" />
+	<link rel="stylesheet" href="assets/css/fonts.css" type="text/css" />
+	<!-- / -->
+
+	<link rel="stylesheet" href="assets/css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="assets/css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="assets/css/magnific-popup.css" type="text/css" />
+
+	<link rel="stylesheet" href="assets/css/responsive.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="stretched">
+
+
+  <app-root></app-root>
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-line-arrow-up"></div>
+  <script src="assets/js/jquery.js"></script>
+	<script src="assets/js/plugins.js"></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+  <!-- <script src="assets/js/functions.js"></script> -->
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", function(event) {
+      reinitTheme();
+    })
+    
+    function reinitTheme() {
+			$('script').each(function () {
+				if (this.src === '/assets/js/functions.js') {
+
+					this.parentNode.removeChild(this);
+				}
+			});
+
+			let script = document.createElement('script');
+			script.src = '/assets/js/functions.js';
+			document.body.appendChild(script);
+
+			particles();
+
+		}
+
+  </script>
+</body>
+</html>
