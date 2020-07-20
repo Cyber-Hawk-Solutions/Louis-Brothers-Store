@@ -1,0 +1,34 @@
+.iproduct .product-title h3 a {
+  font-size: 18px;
+  color: #3C64B1;
+}
+
+.product-price {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.product-image {
+  height: 350px;
+}
+
+.flex-viewport { 
+  height: 100% !important;
+}
+
+.product-image .slide a {
+  display: block;
+  /* width: 100%; */
+  /* height: 100%; */
+  object-fit: cover;
+}
+
+.fslider, .fslider .flexslider, .fslider .slider-wrap, .fslider .slide, .fslider .slide > a, .fslider .slide > img, .fslider .slide > a > img {
+  position: relative;
+  display: block;
+  width: auto;
+  height: 100%;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  object-fit: cover;
+}

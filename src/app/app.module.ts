@@ -8,6 +8,9 @@ import { NavComponent } from './includes/nav/nav.component';
 import { HeaderComponent } from './includes/header/header.component';
 import { HeroComponent } from './includes/hero/hero.component';
 import { FooterComponent } from './includes/footer/footer.component';
+import { CategoriesComponent } from './includes/categories/categories.component';
+import { SubcategoriesComponent } from './includes/subcategories/subcategories.component';
+import { SubcategoriesFilterComponent } from './includes/subcategories-filter/subcategories-filter.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { FooterComponent } from './includes/footer/footer.component';
     NavComponent,
     HeaderComponent,
     HeroComponent,
-    FooterComponent
+    FooterComponent,
+    CategoriesComponent,
+    SubcategoriesComponent,
+    SubcategoriesFilterComponent
   ],
   imports: [
     BrowserModule,
