@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'category-cards',
+  selector: 'app-categories',
   templateUrl: './categories.component.html',
   styleUrls: ['./categories.component.scss']
 })
-export class CategoriesSliderComponent implements OnInit {
+export class CategoriesComponent implements OnInit {
 
   constructor() { }
 

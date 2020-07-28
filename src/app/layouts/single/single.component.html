@@ -1,0 +1,28 @@
+<!-- Page Title
+		============================================= -->
+  <section  *ngIf="!hideHeader" id="page-title" class="page-title-parallax page-title" 
+    [attr.style]="bg | safe: 'style'"
+    data-bottom-top="background-position:0px 300px;" data-top-bottom="background-position:0px -300px;">
+  
+    <div class="container clearfix">
+      <h1 id="header-title" class="header-title" data-animate="fadeInUp"> {{ title }} </h1>
+      <span id="header-subtitle" ass="header-subtitle" data-animate="fadeInUp" data-delay="300"> {{ subtitle }}</span>
+      <ol class="breadcrumb mt-5">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{title}}</li>
+      </ol>
+  
+      <!-- <div class="tp-mask-wrap uncover-left" style="display: block; overflow: hidden">
+        <img class="mt-3" src="assets/include/rs-plugin/demos/assets/images/ziczac.png" style="background: none; width: 225.293px; height: 43.1067px;">
+      </div> -->
+    </div>
+  
+  </section><!-- #page-title end -->
+
+<!-- Content
+		============================================= -->
+<section id="content" class="bg-dots-grey-sm">
+  <div class="content-wrap container">
+    <router-outlet></router-outlet>
+  </div>
+</section><!-- #content end -->

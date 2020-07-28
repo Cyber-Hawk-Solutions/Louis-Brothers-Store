@@ -8,9 +8,13 @@ import { NavComponent } from './includes/nav/nav.component';
 import { HeaderComponent } from './includes/header/header.component';
 import { HeroComponent } from './includes/hero/hero.component';
 import { FooterComponent } from './includes/footer/footer.component';
-import { CategoriesComponent } from './includes/categories/categories.component';
-import { SubcategoriesComponent } from './includes/subcategories/subcategories.component';
+import { CategoriesSliderComponent } from './includes/categories/categories.component';
+import { SubcategoriesSliderComponent } from './includes/subcategories/subcategories-slider.component';
 import { SubcategoriesFilterComponent } from './includes/subcategories-filter/subcategories-filter.component';
+import { SingleComponent } from './layouts/single/single.component';
+import { SafePipe } from './pipes/safe.pipe';
+import { CategoriesComponent } from './pages/categories/categories.component';
+import { SubcategoriesComponent } from './pages/subcategories/subcategories.component';
 
 @NgModule({
   declarations: [
@@ -20,9 +24,13 @@ import { SubcategoriesFilterComponent } from './includes/subcategories-filter/su
     HeaderComponent,
     HeroComponent,
     FooterComponent,
+    CategoriesSliderComponent,
+    SubcategoriesSliderComponent,
+    SubcategoriesFilterComponent,
+    SingleComponent,
     CategoriesComponent,
-    SubcategoriesComponent,
-    SubcategoriesFilterComponent
+    SafePipe,
+    SubcategoriesComponent
   ],
   imports: [
     BrowserModule,
