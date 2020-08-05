@@ -14,7 +14,7 @@
         <h4>Shop popular categories</h4>
       </div> -->
 
-      <category-cards></category-cards>
+      <category-cards [categories]="categories" ></category-cards>
 
       
       <!-- Featured Carousel
@@ -28,7 +28,7 @@
 
     </div>
 
-    <subcategories-filter></subcategories-filter>
+    <subcategories-filter [categories]="categories" [subcategories]="subcategories"></subcategories-filter>
 
 
     <!-- <div class="section my-4">
@@ -79,14 +79,13 @@
               <div class="col-md-5 bg-white">
                 <div class="card noborder py-2">
                   <div class="card-body">
-                    <h3 class="card-title mb-4 ls0">Like us on Facebook and come visit us</h3>
+                    <h3 class="card-title mb-4 ls0">{{contact?.title}}</h3>
                     <ul class="iconlist ml-3">
                       <li><i class="icon-circle-blank text-black-50"></i> Specal Offers </li>
                       <li><i class="icon-circle-blank text-black-50"></i> New Sales</li>
                       <li><i class="icon-circle-blank text-black-50"></i> Experience Products</li>
                     </ul>
-                    <a href="#" class="text-primary ls0 t600 ml-0 mb-2 nott ">Address: Old Pharam Road, St Johns</a><br>
-                    <!-- <small class="font-italic text-black-50">Don't worry, it's totally free.</small> -->
+                    <a href="#" class="text-primary ls0 t600 ml-0 mb-2 nott ">Address: {{contact?.address}}</a><br>
                   </div>
                 </div>
               </div>

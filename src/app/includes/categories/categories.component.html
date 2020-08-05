@@ -18,35 +18,16 @@
     </a>
   </div> -->
 
-  <div class="col-lg-4">
-    <a href="/subcategories" style="background: url('assets/images/categories/home.jpg') no-repeat center center; background-size: cover;">
-      <div class="vertical-middle dark center">
+  <div *ngFor="let category of categories" class="col-lg-4">
+    <a href="/categories?category={{category.title}}" [style.background-image]="category.image.url"  [attr.style]="makeStyles(category.image.url) | safe: 'style'">
+      <div class="vertical-middle dark center" style="position: absolute; top: 50%; width: 100%; padding-top: 0px; padding-bottom: 0px; margin-top: -19.2px;">
         <div class="heading-block nomargin noborder">
-          <h3 class="nott t600 ls0">Home Supplies</h3>
+          <h3 class="nott t600 ls0">{{ category?.title }}</h3>
           <!-- <small class="button bg-white text-dark button-light button-mini">Browse Now</small> -->
         </div>
       </div>
     </a>
   </div>
-  <div class="col-lg-4">
-    <a href="/subcategories" style="background: url('assets/images/categories/electronics.jpg') no-repeat center center; background-size: cover;">
-      <div class="vertical-middle dark center">
-        <div class="heading-block nomargin noborder">
-          <h3 class="nott t600 ls0">Phone Accessories</h3>
-          <!-- <small class="button bg-white text-dark button-light button-mini">Shop Now</small> -->
-        </div>
-      </div>
-    </a>
-  </div>
-  <div class="col-lg-4">
-    <a href="/subcategories" style="background: url('assets/images/categories/toys.jpg') no-repeat center center; background-size: cover;">
-      <div class="vertical-middle dark center">
-        <div class="heading-block nomargin noborder">
-          <h3 class="nott t600 ls0">Toys</h3>
-          <!-- <small class="button bg-white text-dark button-light button-mini">Shop Now</small> -->
-        </div>
-      </div>
-    </a>
-  </div>
+
 
 </div>

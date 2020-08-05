@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'category-cards',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriesSliderComponent implements OnInit {
 
+  @Input() categories: any[];
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  makeStyles(img){
+    let res = "background-image: url('" + img+ "'); background-repeat: no-repeat; background-position: center center; background-size: cover;"
+    return res;
   }
 
 }
