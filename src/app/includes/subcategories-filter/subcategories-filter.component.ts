@@ -17,7 +17,12 @@ export class SubcategoriesFilterComponent implements OnInit {
     (function ($) {
       console.log('load filters1')
 
-      // $(document).ready(function () {
+      $(document).ready(function () {
+              var $grid = $('#shop').isotope({
+            itemSelector: '.product',
+            transitionDuration: '0.65s',
+           
+          });
       //   console.log('load filters2')
       //     // external js: isotope.pkgd.js
 
@@ -94,7 +99,7 @@ export class SubcategoriesFilterComponent implements OnInit {
       
 
 
-      // });
+      });
     })(jQuery); /* END OF WRAPPING FUNCTION */
   }
 }

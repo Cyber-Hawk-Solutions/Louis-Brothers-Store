@@ -17,6 +17,8 @@ import { CategoriesComponent } from './pages/categories/categories.component';
 import { SubcategoriesComponent } from './pages/subcategories/subcategories.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ContactBlockComponent } from './includes/contact/contact.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { HttpClientModule } from '@angular/common/http';
     SingleComponent,
     CategoriesComponent,
     SafePipe,
-    SubcategoriesComponent
+    SubcategoriesComponent,
+    ContactBlockComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
