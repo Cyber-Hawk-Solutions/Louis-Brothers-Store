@@ -10,8 +10,8 @@ import { replace, lowerCase, isEmpty} from "lodash";
 })
 export class CategoriesComponent implements OnInit {
 
-  subcategories: any[] = [];
-  categories: any[] = [];
+  subcategories: any[];
+  categories: any[];
   
   constructor(private apollo: Apollo) { }
 
