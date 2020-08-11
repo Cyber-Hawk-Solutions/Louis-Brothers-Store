@@ -8,7 +8,9 @@
     "build-prod": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "scully": "scully",
+    "scully:serve": "scully serve"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +23,9 @@
     "@angular/platform-browser-dynamic": "~9.1.12",
     "@angular/router": "~9.1.12",
     "@apollo/client": "^3.1.2",
+    "@scullyio/init": "^1.0.0-beta.0",
+    "@scullyio/ng-lib": "^1.0.0-beta.0",
+    "@scullyio/scully": "^1.0.0-beta.0",
     "apollo-angular": "^1.10.0",
     "apollo-angular-link-http": "^1.11.0",
     "apollo-cache-inmemory": "^1.6.0",
@@ -38,9 +43,9 @@
     "@angular/cli": "~9.1.12",
     "@angular/compiler-cli": "~9.1.12",
     "@angular/language-service": "~9.1.12",
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^14.0.27",
     "codelyzer": "^5.0.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",

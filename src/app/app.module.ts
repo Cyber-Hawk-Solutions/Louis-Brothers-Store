@@ -19,6 +19,7 @@ import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ContactBlockComponent } from './includes/contact/contact.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { ScullyLibModule } from '@scullyio/ng-lib';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ContactComponent } from './pages/contact/contact.component';
     BrowserModule,
     AppRoutingModule,
     GraphQLModule,
-    HttpClientModule
+    HttpClientModule,
+    ScullyLibModule
   ],
   providers: [],
   bootstrap: [AppComponent]
