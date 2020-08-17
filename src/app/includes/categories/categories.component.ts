@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-
+declare var $;
 @Component({
   selector: 'category-cards',
   templateUrl: './categories.component.html',
@@ -12,10 +12,32 @@ export class CategoriesSliderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    setTimeout(()=>{
+  
+    $(document).ready(function () {
+      $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: false,
+        dots: false,
+        responsive: {
+          0: {
+            items: 1
+          },
+          600: {
+            items: 3
+          },
+          1000: {
+            items: 4
+          }
+        }
+      })  
+    })
+    },400)
   }
 
-  makeStyles(img){
-    let res = "background-image: url('" + img+ "'); background-repeat: no-repeat; background-position: center center; background-size: cover;"
+  makeStyles(img) {
+    let res = "background-image: url('" + img + "'); position:relative; background-repeat: no-repeat; background-position: center center; background-size: cover;"
     return res;
   }
 

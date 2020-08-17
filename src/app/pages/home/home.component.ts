@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Apollo } from "apollo-angular";
 import gql from "graphql-tag";
 import { replace, lowerCase, isEmpty} from "lodash";
+declare var $;
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -75,6 +76,27 @@ export class HomeComponent implements OnInit {
           }
 
           this.loading = loading;
+
+          // setTimeout(()=>{
+            // $('.owl-carousel').owlCarousel({
+            //   loop: true,
+            //   margin: 10,
+            //   nav: false,
+            //   dots: false,
+            //   responsive: {
+            //     0: {
+            //       items: 1
+            //     },
+            //     600: {
+            //       items: 3
+            //     },
+            //     1000: {
+            //       items: 4
+            //     }
+            //   }
+            // })  
+          // }, 200)
+
         }
       );
   }

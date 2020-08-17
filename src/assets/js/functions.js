@@ -1421,7 +1421,7 @@ var SEMICOLON = SEMICOLON || {};
 				if( $sliderParallaxEl.hasClass('revslider-wrap') || $sliderParallaxEl.find('.carousel-widget').length > 0 ) {
 					parallaxElHeight = $sliderParallaxEl.find('.slider-parallax-inner').children().first().outerHeight();
 					$sliderParallaxEl.height( parallaxElHeight );
-				}
+				}   
 
 				$sliderParallaxEl.find('.slider-parallax-inner').height( parallaxElHeight );
 
