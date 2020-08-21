@@ -14,7 +14,7 @@
         <h4>Shop popular categories</h4>
       </div> -->
 
-      <category-cards [categories]="categories" ></category-cards>
+      <category-cards *ngIf="categories" [categories]="categories" ></category-cards>
       
 
       
@@ -29,7 +29,7 @@
 
     </div>
 
-    <subcategories-filter [categories]="categories" [subcategories]="subcategories"></subcategories-filter>
+    <subcategories-filter *ngIf="categories && subcategories"  [categories]="categories" [subcategories]="subcategories"></subcategories-filter>
 
 
     <!-- <div class="section my-4">

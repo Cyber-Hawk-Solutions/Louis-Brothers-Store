@@ -65,7 +65,7 @@ export class HomeComponent implements OnInit {
             this.subcategories.map(category=>{
               category.slug =  this.makeSlug(category.title)
               if (!isEmpty(category.category)){
-                category.category.slug = this.makeSlug(category.title)
+                category.category.slug = this.makeSlug(category.category.title)
               }
               return category;
             })

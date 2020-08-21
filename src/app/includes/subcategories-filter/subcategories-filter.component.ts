@@ -18,83 +18,92 @@ export class SubcategoriesFilterComponent implements OnInit {
       console.log('load filters1')
 
       $(document).ready(function () {
-              var $grid = $('#shop').isotope({
+
+        console.log('load filters2')
+          // external js: isotope.pkgd.js
+
+          // store filter for each group
+          var buttonFilters = { category: null};
+          var buttonFilter;
+          // quick search regex
+          var qsRegex;
+
+          // init Isotope
+          var $grid = $('.shop2').isotope({
             itemSelector: '.product',
             transitionDuration: '0.65s',
-           
+            getSortData: {
+              name: 'h3 a', // text from querySelector
+              price: function( itemElem ) { // function
+                var price = $( itemElem ).find('.product-price p span').text();
+                return parseFloat( price.replace( /[\(\)]/g, '') );
+              }
+            },
+            filter: function () {
+              var $this = $(this);
+              var searchResult = qsRegex ? $this.text().match(qsRegex) : true;
+              var buttonResult = buttonFilter ? $this.is(buttonFilter) : true;
+              return searchResult && buttonResult;
+            },
           });
-      //   console.log('load filters2')
-      //     // external js: isotope.pkgd.js
 
-      //     // store filter for each group
-      //     var buttonFilters = {};
-      //     var buttonFilter;
-      //     // quick search regex
-      //     var qsRegex;
+          $('.filters').on('click', 'li', function (e) {
+            var $this = $(this);
+            e.preventDefault()
 
-      //     // init Isotope
-      //     var $grid = $('.shop').isotope({
-      //       itemSelector: '.product',
-      //       transitionDuration: '0.65s',
-      //       filter: function () {
-      //         var $this = $(this);
-      //         var searchResult = qsRegex ? $this.text().match(qsRegex) : true;
-      //         var buttonResult = buttonFilter ? $this.is(buttonFilter) : true;
-      //         return searchResult && buttonResult;
-      //       },
-      //     });
+            buttonFilters.category = $this.attr('data-filter');
+            // combine filters
+            buttonFilter = concatValues(buttonFilters);
+            // Isotope arrange
+            $('#shop2').isotope({ filter: buttonFilter});
 
-      //     $('.filters').on('click', 'li', function () {
-      //       var $this = $(this);
-      //       // get group key
-      //       var $buttonGroup = $this.parents('.button-group');
-      //       var filterGroup = $buttonGroup.attr('data-filter-group');
-      //       // set filter for group
-      //       buttonFilters[filterGroup] = $this.attr('data-filter');
-      //       // combine filters
-      //       buttonFilter = concatValues(buttonFilters);
-      //       // Isotope arrange
-      //       $grid.isotope();
-      //     });
+          });
 
-      //     // // use value of search field to filter
-      //     // var $quicksearch = $('.quicksearch').keyup(debounce(function () {
-      //     //   qsRegex = new RegExp($quicksearch.val(), 'gi');
-      //     //   $grid.isotope();
-      //     // }));
+          $('.shop-sorting').on( 'click', 'li', function(e) {
+            var sortByValue = $(this).attr('data-sort-by');
+            e.preventDefault()
+            
+            $grid.isotope({ sortBy: sortByValue });
+          });
 
-      //     // change is-checked class on buttons
-      //     $('.button-group').each(function (i, buttonGroup) {
-      //       var $buttonGroup = $(buttonGroup);
-      //       $buttonGroup.on('click', 'li', function () {
-      //         $buttonGroup.find('.activeFilter').removeClass('activeFilter');
-      //         $(this).addClass('activeFilter');
-      //       });
-      //     });
+          // // use value of search field to filter
+          var $quicksearch = $('.quicksearch').keyup(debounce(function () {
+            qsRegex = new RegExp($quicksearch.val(), 'gi');
+            $grid.isotope();
+          }));
 
-      //     // flatten object by concatting values
-      //     function concatValues(obj) {
-      //       var value = '';
-      //       for (var prop in obj) {
-      //         value += obj[prop];
-      //       }
-      //       return value;
-      //     }
+          // change is-checked class on buttons
+          $('.button-group').each(function (i, buttonGroup) {
+            var $buttonGroup = $(buttonGroup);
+            $buttonGroup.on('click', 'li', function () {
+              $buttonGroup.find('.activeFilter').removeClass('activeFilter');
+              $grid.addClass('activeFilter');
+            });
+          });
 
-      //     // debounce so filtering doesn't happen every millisecond
-      //     function debounce(fn, threshold=null) {
-      //       var timeout;
-      //       threshold = threshold || 100;
-      //       return function debounced() {
-      //         clearTimeout(timeout);
-      //         var args = arguments;
-      //         var _this = this;
-      //         function delayed() {
-      //           fn.apply(_this, args);
-      //         }
-      //         timeout = setTimeout(delayed, threshold);
-      //       };
-      //     }
+          // flatten object by concatting values
+          function concatValues(obj) {
+            var value = '';
+            for (var prop in obj) {
+              value += obj[prop];
+            }
+            return value;
+          }
+
+          // debounce so filtering doesn't happen every millisecond
+          function debounce(fn, threshold=null) {
+            var timeout;
+            threshold = threshold || 100;
+            return function debounced() {
+              clearTimeout(timeout);
+              var args = arguments;
+              var _this = this;
+              function delayed() {
+                fn.apply(_this, args);
+              }
+              timeout = setTimeout(delayed, threshold);
+            };
+          }
 
       
 

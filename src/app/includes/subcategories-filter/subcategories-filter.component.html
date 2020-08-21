@@ -1,5 +1,7 @@
 <div class="container clearfix mt-5">
 
+  <!-- FIX IT BY REFERENCING ORIGINAL COMMIT -->
+
   <!-- Sidebar
   ============================================= -->
   <div class="sidebar nobottommargin">
@@ -8,9 +10,10 @@
       <div class="widget widget-filter-links clearfix">
 
         <h4>Select Category</h4>
-        <ul class="custom-filter" data-container="/subcategoriesshop" data-active-class="active-filter">
-          <li class="widget-filter-reset active-filter"><a data-filter="*">Clear</a></li>
-          <li *ngFor="let category of categories"><a href="#" [attr.data-filter]="category.slug">{{category.title}}</a></li>
+        <ul class="custom-filter filters" data-container="#shop" data-active-class="active-filter">
+          <li class="" data-filter="*"><a href="#" >All</a></li>
+          <li *ngFor="let category of categories" [attr.data-filter]="'.sf-'+category.slug"><a href="#" >{{category.title}}</a></li>
+
         </ul>
 
       </div>
@@ -19,10 +22,10 @@
 
         <h4>Sort By</h4>
         <ul class="shop-sorting">
-          <li class="widget-filter-reset active-filter"><a href="/subcategories" data-sort-by="original-order">Clear</a></li>
-          <li><a href="#" data-sort-by="name">Name</a></li>
-          <li><a href="#" data-sort-by="price_lh">Price: Low to High</a></li>
-          <li><a href="#" data-sort-by="price_hl">Price: High to Low</a></li>
+          <li class="widget-filter-reset active-filter"><a href="#" data-sort-by="original-order">Clear</a></li>
+          <li data-sort-by="name"><a href="#" >Name</a></li>
+          <li data-sort-by="price"><a href="#" >Price: Low to High</a></li>
+          <li data-sort-by="price_hl"><a href="#" >Price: High to Low</a></li>
         </ul>
 
       </div>
@@ -37,10 +40,12 @@
 
     <div  class="">
 
-      <div id="shop" class="shop product-3 grid-container clearfix" style="height:100%">
+ 
+      <div id="shop2" class=" product-3 grid-container w-100" style="overflow: visible;">
         <!-- Shop Item 2
         ============================================= -->
-        <div *ngFor="let category of subcategories" class="product sf-{{category?.category?.slug}} clearfix {{ category?.hidden == true? 'd-none' : '' }}">
+        <div *ngFor="let category of subcategories" class="product sf-{{category?.category?.slug}} clearfix {{ category?.hidden == true? 'd-none' : '' }}"
+        style="float:left">
           <div class="product-image">
             <a href="/subcategories/{{category.slug}}"><img src="{{category?.image?.url}}" alt="Image 2"></a>
             <div class="product-overlay">
@@ -53,12 +58,13 @@
             <div class="product-title mb-1">
               <h3><a href="/subcategories/{{category.slug}}">{{category.title}}</a></h3>
             </div>
-            <div class="product-price font-primary"><p>Starting from ${{category.startingPrice}}</p></div>
+            <div class="product-price font-primary"><p>Starting from <span>${{category.startingPrice}}</span></p></div>
           </div>
         </div>
 
 
       </div>
+
 
 
     </div>

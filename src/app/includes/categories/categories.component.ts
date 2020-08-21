@@ -33,7 +33,7 @@ export class CategoriesSliderComponent implements OnInit {
         }
       })  
     })
-    },400)
+    },500)
   }
 
   makeStyles(img) {
