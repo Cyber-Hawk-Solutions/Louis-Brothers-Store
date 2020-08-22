@@ -21,6 +21,10 @@ export class ContactComponent implements OnInit {
               phone
               title
               address
+              email
+              hours {
+                DayHours
+              }
             }
           }
         `

@@ -20,6 +20,7 @@ export class CategoriesSliderComponent implements OnInit {
         margin: 10,
         nav: false,
         dots: false,
+        autoplay: true,
         responsive: {
           0: {
             items: 1

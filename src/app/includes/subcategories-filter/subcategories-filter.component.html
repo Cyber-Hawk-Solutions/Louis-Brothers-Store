@@ -2,6 +2,43 @@
 
   <!-- FIX IT BY REFERENCING ORIGINAL COMMIT -->
 
+  <div class="postcontent nobottommargin col_last">
+    <!-- <div class="fancy-title title-dotted-border topmargin-sm mb-4 title-center">
+      <h4>New Arrivals: Men</h4>
+    </div> -->
+
+    <div  class="">
+
+ 
+      <div id="shop2" class="shop product-3 grid-container w-100 " style="overflow: visible;">
+        <!-- Shop Item 2
+        ============================================= -->
+        <div *ngFor="let category of subcategories" class="product sf-{{category?.category?.slug}} clearfix {{ category?.hidden == true? 'd-none' : '' }}"
+        style="">
+          <div class="product-image">
+            <a href="/subcategories/{{category.title}}"><img src="{{category?.image?.url}}" alt="Image 2"></a>
+            <div class="product-overlay">
+              <a href="/subcategories/{{category.title}}" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
+              <a href="/subcategories/{{category.title}}" class="item-quick-view" data-lightbox="ajax"><i
+                  class="icon-line-search"></i><span>Quick View</span></a>
+            </div>
+          </div>
+          <div class="product-desc">
+            <div class="product-title mb-1">
+              <h3><a href="/subcategories/{{category.slug}}">{{category.title}}</a></h3>
+            </div>
+            <div class="product-price font-primary"><p>Starting from <span>${{category.startingPrice}}</span></p></div>
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+    </div>
+  </div>
+  
   <!-- Sidebar
   ============================================= -->
   <div class="sidebar nobottommargin">
@@ -33,42 +70,7 @@
     </div>
   </div><!-- .sidebar end -->
 
-  <div class="postcontent nobottommargin col_last">
-    <!-- <div class="fancy-title title-dotted-border topmargin-sm mb-4 title-center">
-      <h4>New Arrivals: Men</h4>
-    </div> -->
 
-    <div  class="">
-
- 
-      <div id="shop2" class=" product-3 grid-container w-100" style="overflow: visible;">
-        <!-- Shop Item 2
-        ============================================= -->
-        <div *ngFor="let category of subcategories" class="product sf-{{category?.category?.slug}} clearfix {{ category?.hidden == true? 'd-none' : '' }}"
-        style="float:left">
-          <div class="product-image">
-            <a href="/subcategories/{{category.slug}}"><img src="{{category?.image?.url}}" alt="Image 2"></a>
-            <div class="product-overlay">
-              <a href="/subcategories/{{category.slug}}" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
-              <a href="/subcategories/{{category.slug}}" class="item-quick-view" data-lightbox="ajax"><i
-                  class="icon-line-search"></i><span>Quick View</span></a>
-            </div>
-          </div>
-          <div class="product-desc">
-            <div class="product-title mb-1">
-              <h3><a href="/subcategories/{{category.slug}}">{{category.title}}</a></h3>
-            </div>
-            <div class="product-price font-primary"><p>Starting from <span>${{category.startingPrice}}</span></p></div>
-          </div>
-        </div>
-
-
-      </div>
-
-
-
-    </div>
-  </div>
 
 
 </div>

@@ -20,6 +20,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { ContactBlockComponent } from './includes/contact/contact.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ScullyLibModule } from '@scullyio/ng-lib';
+import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
 @NgModule({
   declarations: [

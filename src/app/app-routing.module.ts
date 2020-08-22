@@ -16,7 +16,7 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'subcategories', component: SingleComponent, data: { hideHeader: true },
+    path: 'subcategories/:id', component: SingleComponent, data: { hideHeader: true },
     children: [
       { path: '', component: SubcategoriesComponent },
     ],

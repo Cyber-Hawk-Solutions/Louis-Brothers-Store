@@ -32,3 +32,17 @@
   -webkit-backface-visibility: hidden;
   object-fit: cover;
 }
+
+.single-icon i {
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #444;
+  line-height: 46px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.contact-icon {
+  margin-bottom: 40px;
+}
