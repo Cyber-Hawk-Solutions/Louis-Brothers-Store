@@ -2,7 +2,7 @@
 
 <div class="col_one_third nobottommargin">
   <div class="product  clearfix ">
-    <div class="product-image">
+    <div class="product-image" *ngIf="subcategory?.image?.url">
       <a href="#"><img src="{{subcategory?.image?.url}}" alt="Image 8"></a>
       <!-- <div class="product-overlay">
         <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
@@ -28,7 +28,7 @@
   <div class="col_half">
 
     <div *ngFor="let item of itemsHalf" class="spost clearfix">
-      <div class="entry-image">
+      <div class="entry-image" *ngIf="item.image.url">
         <a href="#"><img src="{{item.image.url}}" alt="Image"></a>
       </div>
       <div class="entry-c">

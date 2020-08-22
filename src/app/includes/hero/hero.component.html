@@ -1,18 +1,19 @@
 <!-- Slider
 		============================================= -->
-<section id="slider" class="slider-element swiper_wrapper clearfix" data-autoplay="6000" data-speed="800"
+<section id="slider" class="slider-element swiper_wrapper clearfix"  data-speed="800"
   data-loop="true" data-grab="true" data-effect="fade" data-arrow="false" style="height: 600px;">
 
   <div class="swiper-container swiper-parent">
     <div class="swiper-wrapper">
-      <div class="swiper-slide dark" style="background-image: url('assets/images/slides/slide-1.jpg');">
+      <div class="swiper-slide " style="background-image: url('assets/images/slides/slide-1.jpg');">
         <div class="container clearfix">
           <div class="slider-caption slider-caption-center">
             <!-- <div class="h5 mb-2 font-secondary">Fresh Arrivals</div> -->
-            <h2 class="bottommargin-sm text-dark">Need something? We have it.</h2>
+            <h2 class="bottommargin-sm text-dark"> Need something? We have it.</h2>
             <h3 class="bottommargin-sm text-dark">With the best prices on island.</h3>
 
-            <input class="bg-white text-dark form-control form-control-lg mb-2" type="text" placeholder="What are you searching for?">
+            <input [(ngModel)]="term" class="bg-white text-dark form-control form-control-lg mb-2" name="term" type="text" placeholder="What are you searching for?">
+            <app-search-results [term]="term" [subcategories]="subcategories"></app-search-results>
 
             <!-- <a href="#" class="button bg-white text-dark button-light">Shop Menswear</a> -->
           </div>

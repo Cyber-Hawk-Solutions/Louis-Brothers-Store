@@ -23,6 +23,9 @@ import { ScullyLibModule } from '@scullyio/ng-lib';
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { FormsModule } from '@angular/forms';
+import { SearchResultsComponent } from './includes/search-results/search-results.component';
 
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
@@ -42,14 +45,17 @@ gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
     SafePipe,
     SubcategoriesComponent,
     ContactBlockComponent,
-    ContactComponent
+    ContactComponent,
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     GraphQLModule,
     HttpClientModule,
-    ScullyLibModule
+    ScullyLibModule,
+    Ng2SearchPipeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

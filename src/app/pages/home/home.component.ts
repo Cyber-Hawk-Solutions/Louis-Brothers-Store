@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Apollo } from "apollo-angular";
 import gql from "graphql-tag";
 import { replace, lowerCase, isEmpty} from "lodash";
+import { DataService } from 'src/app/services/data/data.service';
 declare var $;
 @Component({
   selector: 'app-home',
@@ -15,7 +16,7 @@ export class HomeComponent implements OnInit {
   loading = true;
   contact: any = {};
 
-  constructor(private apollo: Apollo) { }
+  constructor(private apollo: Apollo, private data: DataService) { }
 
   ngOnInit() {
     this.apollo
@@ -69,6 +70,8 @@ export class HomeComponent implements OnInit {
               }
               return category;
             })
+
+            this.data.setSubcategories(this.subcategories);
             
           } 
           if (data.contactInformation){

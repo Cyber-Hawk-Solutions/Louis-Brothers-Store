@@ -86,7 +86,7 @@
       <nav id="primary-menu" class="style-2 with-arrows">
 
         <ul>
-          <li class="current"><a href="index"><div>Home</div></a></li>
+          <li class="current"><a href="/"><div>Home</div></a></li>
 
           <li><a href="/categories"><div>Categories</div></a></li>
           <li><a href="/contact"><div>Contact</div></a></li>
@@ -95,12 +95,12 @@
 
         <!-- Top Search
         ============================================= -->
-        <!-- <div id="top-search">
+        <div id="top-search">
           <a href="#" id="top-search-trigger"><i class="icon-line-search"></i><i class="icon-line-cross"></i></a>
           <form action="search.html" method="get">
-            <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
+            <input [(ngModel)]="term" type="text" name="term" class="form-control" value="" placeholder="Type to Search Item Groups..">
           </form>
-        </div> -->
+        </div>
         <!-- #top-search end -->
 
         <!-- Top Cart
@@ -155,3 +155,4 @@
   </div>
 
 </header><!-- #header end -->
+<app-search-results [term]="term"></app-search-results>

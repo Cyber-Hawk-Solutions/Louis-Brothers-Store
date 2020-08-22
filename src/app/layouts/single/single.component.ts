@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { has } from 'lodash';
+import { DataService } from 'src/app/services/data/data.service';
 
 @Component({
   selector: 'app-single',
@@ -14,7 +15,7 @@ export class SingleComponent implements OnInit {
   bg = "assets/images/slides/slide-1.jpg"
   hideHeader = false;
 
-  constructor(private route: ActivatedRoute) { 
+  constructor(private route: ActivatedRoute, private data: DataService) { 
     route.data.subscribe(data=>{
       // console.log('route', data)
       if (has(data, 'title')) this.title = data.title;
@@ -27,6 +28,8 @@ export class SingleComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this.data.loadSubcategories()
   }
 
   makeBgStyles(img){

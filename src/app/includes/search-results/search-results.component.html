@@ -1,0 +1,7 @@
+<ul class="list-group search-items" *ngIf="term?.length>0">
+  <li [routerLink]="['/subcategories', item.title ]" (click)="term = ''" class="list-group-item text-left" *ngFor="let item of subcategories | filter:term">{{item.title}} <i class="icon-search2 pr-4 float-right"></i>
+  </li>
+  <li routerLink="contact" class="list-group-item" (click)="term = ''" *ngIf="(subcategories | filter:term).length == 0">
+    No results found.. but give us a call to make sure!
+  </li> 
+</ul>
