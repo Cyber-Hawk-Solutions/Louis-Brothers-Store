@@ -51,3 +51,7 @@
   position: relative;
   min-height: 100vh;
 }
+
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets {
+  display: none;
+}

@@ -14,6 +14,10 @@ export class SubcategoriesFilterComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+  }
+
+  load(){
     (function ($) {
       console.log('load filters1')
 

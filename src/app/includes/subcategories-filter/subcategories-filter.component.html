@@ -1,5 +1,4 @@
-<div class="container clearfix mt-5">
-
+<div *ngIf="!subcategories && !categories"  class="container clearfix mt-5">
   <!-- FIX IT BY REFERENCING ORIGINAL COMMIT -->
 
   <div class="postcontent nobottommargin col_last">
@@ -10,7 +9,62 @@
     <div  class="">
 
  
-      <div id="shop2" class="shop product-3 grid-container w-100 " style="overflow: visible;">
+      <div class="shop product-3 grid-container w-100 " style="overflow: visible;">
+        <div *ngFor="let item of [1,2,3,4,5,6]" class="product  clearfix"
+        style="">
+          <div class="product-image">
+            <ngx-skeleton-loader
+            [theme]="{
+              width: '100%',
+              'border-radius': '0',
+              height: '350px'
+            }"
+            appearance="circle"
+          ></ngx-skeleton-loader>   
+          </div>
+          <div class="product-desc">
+            <ngx-skeleton-loader count="2"></ngx-skeleton-loader>
+          </div>
+        </div>
+
+
+
+      </div>
+
+
+
+    </div>
+  </div>
+  
+  <!-- Sidebar
+  ============================================= -->
+  <div class="sidebar nobottommargin">
+    <div class="sidebar-widgets-wrap">
+
+      <div class="widget widget-filter-links clearfix">
+        <ngx-skeleton-loader count="7"></ngx-skeleton-loader>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<div *ngIf="subcategories && categories"  class="container clearfix mt-5">
+  {{ load() }}
+  <!-- FIX IT BY REFERENCING ORIGINAL COMMIT -->
+
+  <div class="postcontent nobottommargin col_last">
+    <!-- <div class="fancy-title title-dotted-border topmargin-sm mb-4 title-center">
+      <h4>New Arrivals: Men</h4>
+    </div> -->
+
+    <div  class="">
+
+ 
+      <div  id="shop2" class="shop product-3 grid-container w-100 " style="overflow: visible;">
         <!-- Shop Item 2
         ============================================= -->
         <div *ngFor="let category of subcategories" class="product sf-{{category?.category?.slug}} clearfix {{ category?.hidden == true? 'd-none' : '' }}"

@@ -12,8 +12,14 @@ export class CategoriesSliderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+  }
+
+  loadData(){
     setTimeout(()=>{
   
+
+    },500)
     $(document).ready(function () {
       $('.owl-carousel').owlCarousel({
         loop: true,
@@ -37,8 +43,8 @@ export class CategoriesSliderComponent implements OnInit {
         }
       })  
     })
-    },500)
   }
+
 
   makeStyles(img) {
     let res = "background-image: url('" + img + "'); position:relative; background-repeat: no-repeat; background-position: center center; background-size: cover;"

@@ -26,6 +26,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormsModule } from '@angular/forms';
 import { SearchResultsComponent } from './includes/search-results/search-results.component';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
@@ -55,7 +56,8 @@ gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
     HttpClientModule,
     ScullyLibModule,
     Ng2SearchPipeModule,
-    FormsModule
+    FormsModule,
+    NgxSkeletonLoaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
