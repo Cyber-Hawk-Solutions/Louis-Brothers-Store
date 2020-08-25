@@ -1565,7 +1565,7 @@
 	#top-account a.btn i:last-child { display: none; }
 
 	.swiper_wrapper:not(.force-full-screen),
-	.swiper_wrapper:not(.force-full-screen):not(.canvas-slider-grid) .swiper-slide { height: 300px !important; }
+	.swiper_wrapper:not(.force-full-screen):not(.canvas-slider-grid) .swiper-slide { height: 340px !important; }
 
 	.swiper_wrapper .slider-caption h2 { font-size: 1.75rem; }
 
